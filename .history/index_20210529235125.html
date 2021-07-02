@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // animal has methods
+        let animal = {
+            walk() {
+                if (!this.isSleeping) {
+                    alert(`I walk`);
+                }
+            },
+            sleep() {
+                this.isSleeping = true;
+            }
+        };
+
+        let rabbit = {
+            name: "White Rabbit",
+            __proto__: animal
+        };
+
+        // modifies rabbit.isSleeping
+        // rabbit.sleep();
+        alert(Object.keys(rabbit))
+        for (let prop in rabbit) {
+            alert(prop);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function shape() {
+            this.x = 0;
+            this.y = 0;
+        }
+        shape.prototype.move = function(x, y) {
+            this.x += x;
+            this.y += Y;
+            console.log(`SHAPE MOVED`);
+
+        };
+
+        function Rect() {
+            shape.call(this);
+        }
+        Rect.prototype = Object.create(shape.prototype);
+    </script>
+</body>
+
+</html>

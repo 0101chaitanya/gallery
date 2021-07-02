@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        let o;
+        o = Object.create(null);
+        o = {};
+        //o = Object.create(Object.prototype);
+        o = Object.create(Object.prototype, {
+
+            foo: {
+                writable: true,
+                configurable: true,
+                value: 'hello'
+            },
+            bar: {
+                configurable: false,
+                get: function() {
+                    return 10;
+                },
+                set(value) {
+                    console.log(`settings 'o.bar' to`, value);
+                },
+            }
+        });
+        document.write(o.bar = 2);
+    </script>
+</body>
+
+</html>

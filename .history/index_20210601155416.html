@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        class Dog {
+            constructor(name, breed, color) {
+                this.name = name;
+                this.breed = breed;
+                this.color = color;
+            }
+            bark() {
+                return this;
+            }
+        }
+        class dane extends Dog {
+            constructor(name) {
+                super(name)
+            }
+            bigBark() {
+                return this;
+            }
+        }
+        let myPet = new dane('lillie');
+        console.log(myPet.prototype.bigBark());
+    </script>
+</body>
+
+</html>

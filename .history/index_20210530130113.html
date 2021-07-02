@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function superClass() {
+            haha = function() {
+                document.write('haha');
+            }
+        }
+
+        function OtherSuperClass() {}
+
+        function MyClass() {
+            superClass.call(this);
+            OtherSuperClass.call(this);
+        }
+        MyClass.prototype = Object.create(superClass.prototype);
+        Object.assign(MyClass.prototype, OtherSuperClass.prototype);
+        MyClass.prototype.constructor = MyClass;
+        MyClass.prototype.myMethod = function() {
+            document.write('jo');
+        };
+        MyClass.prototype.myMethod();
+        MyClass.prototype.haha();
+    </script>
+</body>
+
+</html>

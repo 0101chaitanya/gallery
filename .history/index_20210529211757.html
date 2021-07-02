@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function printStuff(myDocuments) {
+            this.documents = myDocuments;
+        }
+        printStuff.prototype.print = function() {
+            console.log(this.documents);
+        }
+        let newObj = new printStuff('I am a new Object and I can print');
+        document.write(newObj.prototype.attribute);
+    </script>
+</body>
+
+</html>

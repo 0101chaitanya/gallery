@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function plant() {
+            this.country = 'mexico';
+            this.isOrganic = true;
+        }
+        plant.prototype.showNameAndColor = function() {
+            console('i am a ' + this.name + ' and my color is ' + this.color);
+        }
+        plant.prototype.amIorganic = function() {
+            if (this.isOrganic) {
+                console.log('I am organic baby!');
+            }
+        }
+
+        function fruit(fruitName, fruitColor) {
+            this.name = fruitName;
+            this.color = fruitColor;
+        }
+        fruit.prototype = new plant();
+        let aBanana = new fruit('banana', `yellow`);
+        document.write(aBanana.name);
+    </script>
+</body>
+
+</html>

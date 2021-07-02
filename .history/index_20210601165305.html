@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        const myObj = Object.create(Object.prototype);
+        const Car = function(color) {
+            this.color = color;
+        }
+        Car.prototype.getColor = {
+            getColor() {
+                return this.color;
+            }
+        }
+        const car1 = new Car('red');
+        const car2 = Object.create(Car.prototype);
+        //console.dir(car1, car2);
+        const toyCar = function() {}
+        toyCar.prototype = Object.create(Car.prototype);
+        const legoCar = new toyCar();
+        console.dir(legoCar instanceof Car);
+    </script>
+</body>
+
+</html>

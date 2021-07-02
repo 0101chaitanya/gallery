@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // animal has methods
+        function student(name, grade) {
+            this.name = name;
+            this.grade = grade;
+            this.sayName = function() {
+                console.log(this.name);
+            }
+            goToProm() {
+                console.log(this.grade);
+            }
+
+        }
+        sarah = Object.create(student.prototype);
+        sarah.name = 'sarah';
+        sarah.grade = '12';
+        sarah.sayName();
+        sarah.goToProm();
+    </script>
+</body>
+
+</html>

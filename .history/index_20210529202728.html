@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function Player(name, marker) {
+            this.name = name
+            this.marker = marker
+            this.sayName = function() {
+                console.log(marker)
+            }
+        }
+
+        const player1 = new Player('steve', 'X')
+        const player2 = new Player('also steve', 'O')
+        player1.sayName() // logs 'steve'
+        player2.sayName() // logs 'also steve'
+    </script>
+</body>
+
+</html>

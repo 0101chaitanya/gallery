@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        let animal = {
+            eats: true,
+
+            walk() {
+                alert('hehe');
+            }
+        };
+        let rabbit = {
+            jumps: true,
+        }
+        let longEar = {
+            earLength: 10,
+            __proto__: rabbit,
+        };
+        rabbit.__proto__ = animal;
+        console.log(longEar.walk(), longEar.eats);
+    </script>
+</body>
+
+</html>

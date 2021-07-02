@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function student() {
+            heart = 'black';
+
+        }
+
+        student.prototype.sayName = function() {
+            console.log(this.name);
+        }
+
+        function EighthGrader(name) {
+            this.name = name;
+            this.grade = 8;
+        }
+        EighthGrader.prototype = (student.prototype);
+
+        function carl(name) {
+            this.name = name;
+            this.grade = 10;
+        }
+
+        carl.prototype = student.prototype;
+        carl.sayName() = function() {
+            console.log('lol');
+        }
+        let sam = new EighthGrader('sam');
+        console.log(sam.sayName());
+    </script>
+</body>
+
+</html>

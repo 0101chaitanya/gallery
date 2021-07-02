@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        let user = {
+            name: 'john',
+            surname: 'smith',
+            set fullName(value) {
+                [this.name, this.surname] = value.split(' ');
+            },
+            get fullName() {
+                return `${this.name} ${this.surname}`;
+            }
+        };
+        let admin = {
+            __proto__: user,
+            isAdmin: true,
+        };
+        //   alert(admin.fullName);
+        admin.fullName = 'alice cooper';
+        alert(admin.fullName);
+        alert(user.fullName);
+    </script>
+</body>
+
+</html>

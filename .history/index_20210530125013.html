@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function shape() {
+            this.x = 0;
+            this.y = 0;
+        }
+        shape.prototype.move = function(x, y) {
+            this.x += x;
+            this.y += y;
+            console.log(`SHAPE MOVED`);
+
+        };
+
+        function Rectangle() {
+            //shape.call(this);
+            vid = 'haha';
+        }
+        Rectangle.prototype = Object.create(shape.prototype);
+        Rectangle.prototype.constructor = Rectangle;
+
+        var rect = new Rectangle();
+        console.log(`Is rect a rectangle`, rect instanceof Rectangle);
+        console.log(`Is  rect a shape`, rect instanceof shape);
+        rect.move(1, 1);
+    </script>
+</body>
+
+</html>

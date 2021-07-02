@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        const myObj = Object.create(Object.prototype);
+        const Car = function(color) {
+            this.color = color;
+        }
+        const car1 = new Car('red');
+        const car2 = Object.create(Car.prototype);
+        console.dir(myObj);
+    </script>
+</body>
+
+</html>

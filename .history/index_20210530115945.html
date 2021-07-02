@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        ocn = Object.create(null);
+        ocn.toString = Object.toString;
+        document.write(ocn.toString, ocn.toString === Object.toString)
+        console.log ocn.toString();
+    </script>
+
+</body>
+
+</html>

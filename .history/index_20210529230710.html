@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function plant() {
+            this.country = 'mexico';
+            this.isOrganic = true;
+            this.hi = function() {
+                document.write(`hi`);
+            }
+        }
+        plant.prototype.showNameAndColor = function() {
+            return ('i am a ' + this.name + ' and my color is ' + this.color);
+        }
+        plant.prototype.amIorganic = function() {
+            if (this.isOrganic) {
+                console.log('I am organic baby!');
+            }
+        }
+
+        function fruit(fruitName, fruitColor) {
+            this.name = fruitName;
+            this.color = fruitColor;
+        }
+        fruit.prototype = new plant();
+        let aBanana = new fruit('banana', `yellow`);
+        document.write(aBanana.hi());
+        let myFriend = {
+            name: 'pete'
+        };
+        console.log(myFriend.name.split(""));
+
+        function people() {
+            this.superStar = 'MJ';
+        }
+
+        people.prototype.athlete = 'TW';
+        let famousPerson = new People();
+        famousPerson.superStar = 'SJ';
+        console.log(famousPerson.superStar, people);
+    </script>
+</body>
+
+</html>

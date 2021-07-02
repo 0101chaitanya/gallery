@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        let o;
+        /*   o = Object.create(null);
+          o = {};
+          //o = Object.create(Object.prototype);
+          o = Object.create(Object.prototype, {
+  
+              foo: {
+                  writable: true,
+                  configurable: true,
+                  value: 'hello'
+              },
+              bar: {
+                  configurable: false,
+                  get: function() {
+                      return 10;
+                  },
+                  set(value) {
+                      console.log(`settings 'o.bar' to`, value);
+                  },
+              }
+          });
+         */ // o.bar = 2;
+        //document.write(o.bar = 2);
+
+        function Constructor() {}
+        //o = new Constructor();
+        o = Object.create({}, {
+            p: {
+                value: 43,
+                writable: true,
+                configurable: true,
+            }
+        });
+        o.p = 24;
+        console.log(o.p);
+        o.q = 12;
+        console.log(o.q);
+        for (let prop in o) {
+            console.log(prop, o.hasOwnProperty(prop));
+        }
+        delete o.p;
+        console.log(o.p);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function shape() {
+            this.x = 0;
+            this.y = 0;
+        }
+        shape.prototype.move = function(x, y) {
+            this.x += x;
+            this.y += Y;
+            console.log(`SHAPE MOVED`);
+
+        };
+
+        function Rectangle() {
+            shape.call(this);
+            vid = 'haha';
+        }
+        Rectangle.prototype = Object.create(shape.prototype);
+        Rectangle.prototype.constructor = Rectangle;
+        console.log(Rectangle);
+        var rect = new Rectangle();
+    </script>
+</body>
+
+</html>

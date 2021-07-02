@@ -1,0 +1,96 @@
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-auto-flow: row;
+    grid-template-rows: auto 25rem auto;
+    grid-template-columns: auto 25rem auto;
+    grid-template-areas: '.  heading-center  .' 'left  center  right' '.  bottom  .';
+    /*  top: 50%;
+    
+    transform: translateY(50%);
+ */
+}
+
+h1 {
+    grid-area: heading-center;
+    justify-self: center;
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+#innerLayer {
+    grid-area: center;
+}
+
+img {
+    display: none;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 2rem;
+}
+
+.enable {
+    display: block;
+}
+
+#circleSet {
+    justify-self: center;
+    width: auto;
+    height: auto;
+    position: relative;
+    grid-area: bottom;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#circleSet>span {
+    justify-self: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 0.1rem solid rgb(219, 200, 200);
+    margin: 1rem;
+}
+
+#circleSet>span:hover {
+    border-color: rgb(233, 211, 91);
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+#left {
+    grid-area: left;
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+
+#right {
+    grid-area: right;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+
+#right:hover,
+#left:hover {
+    color: rgb(56, 206, 64);
+}
+
+
+/* #circleSet>span:nth-child(n) */
